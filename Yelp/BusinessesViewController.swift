@@ -30,12 +30,23 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Table View setup
         tableView.delegate = self
         tableView.dataSource = self
-        searchBar.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
         
+        // Search Bar setup
+        searchBar.delegate = self
+        searchBar.sizeToFit()
+        searchBar.placeholder = "tacos, cheap dinner, Max's"
+        navigationItem.titleView = searchBar
+        if let navigationBar = navigationController?.navigationBar {
+    
+            navigationBar.barTintColor = UIColor(red: 0.7, green: 0.03, blue: 0.03, alpha: 1)
+
+        }
+    
         Business.searchWithTerm(term: "Thai", completion: { (businesses: [Business]?, error: Error?) -> Void in
             
             self.businesses = businesses
