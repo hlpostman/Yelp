@@ -34,9 +34,12 @@
                                                         <constraint firstAttribute="width" constant="65" id="nx7-pZ-MKr"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h8J-OA-mjr" userLabel="Star Rating">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h8J-OA-mjr" userLabel="Star Rating">
                                                     <frame key="frameInset" minX="81" minY="31" width="85" height="15"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="85" id="dQt-DQ-KBE"/>
+                                                        <constraint firstAttribute="height" constant="15" id="rBe-AW-OUK"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="1. Grand Pu Bah" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21O-EV-sS1" userLabel="Business Name">
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -80,7 +83,9 @@
                                             <constraints>
                                                 <constraint firstItem="dya-Ir-8LQ" firstAttribute="leading" secondItem="INy-Mg-yph" secondAttribute="leading" constant="8" id="9R4-S6-Cex"/>
                                                 <constraint firstItem="dya-Ir-8LQ" firstAttribute="top" secondItem="INy-Mg-yph" secondAttribute="top" constant="8" id="C6A-mN-YAb"/>
+                                                <constraint firstItem="h8J-OA-mjr" firstAttribute="leading" secondItem="dya-Ir-8LQ" secondAttribute="trailing" constant="8" id="Lgj-co-iIR"/>
                                                 <constraint firstItem="21O-EV-sS1" firstAttribute="leading" secondItem="dya-Ir-8LQ" secondAttribute="trailing" constant="8" id="SbA-uI-hBO"/>
+                                                <constraint firstItem="h8J-OA-mjr" firstAttribute="top" secondItem="21O-EV-sS1" secondAttribute="bottom" constant="8" id="ZOi-0g-B4A"/>
                                                 <constraint firstAttribute="trailing" secondItem="P1A-Qo-l1r" secondAttribute="trailing" constant="8" id="dNW-8E-v5d"/>
                                                 <constraint firstItem="P1A-Qo-l1r" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="21O-EV-sS1" secondAttribute="trailing" constant="8" id="dRL-pu-zHY"/>
                                                 <constraint firstItem="P1A-Qo-l1r" firstAttribute="top" secondItem="INy-Mg-yph" secondAttribute="top" constant="10" id="edx-Np-rKS"/>
