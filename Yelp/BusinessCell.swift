@@ -43,7 +43,7 @@ class BusinessCell: UITableViewCell {
         thumbImageView.clipsToBounds = true
         
         // My name label wrapped without the below line
-        businessNameLabel.preferredMaxLayoutWidth = businessNameLabel.frame.size.width
+//        businessNameLabel.preferredMaxLayoutWidth = businessNameLabel.frame.size.width
     }
     
     // For landscape view
@@ -51,7 +51,7 @@ class BusinessCell: UITableViewCell {
         // Call parent function
         super.layoutSubviews()
         
-        businessNameLabel.preferredMaxLayoutWidth = businessNameLabel.frame.size.width
+//        businessNameLabel.preferredMaxLayoutWidth = businessNameLabel.frame.size.width
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
