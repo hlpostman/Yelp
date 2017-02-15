@@ -40,7 +40,12 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         searchBar.delegate = self
         searchBar.sizeToFit()
         navigationItem.titleView = searchBar
-        
+        if let navigationBar = navigationController?.navigationBar {
+    
+            navigationBar.barTintColor = UIColor(red: 0.7, green: 0.03, blue: 0.03, alpha: 1)
+
+        }
+    
         Business.searchWithTerm(term: "Thai", completion: { (businesses: [Business]?, error: Error?) -> Void in
             
             self.businesses = businesses
