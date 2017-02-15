@@ -5,7 +5,7 @@
 //  Created by Aristotle on 2017-02-14.
 //  Copyright © 2017 Timothy Lee. All rights reserved.
 //
-
+// The real one
 import UIKit
 
 class BusinessCell: UITableViewCell {
