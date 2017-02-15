@@ -55,9 +55,7 @@
                                                     <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7E7-w4-482" userLabel="Priciness - NOT CONNECTED">
-                                                    <frame key="frameInset" minX="351" minY="22" width="16" height="15"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7E7-w4-482" userLabel="Priciness - NOT CONNECTED">
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -67,7 +65,7 @@
                                                     <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.07 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1A-Qo-l1r" userLabel="Distance">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="0.07 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1A-Qo-l1r" userLabel="Distance">
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -85,6 +83,7 @@
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZDe-xT-xbC" secondAttribute="bottom" constant="12" id="Pfw-GM-A85"/>
                                                 <constraint firstItem="ZDe-xT-xbC" firstAttribute="leading" secondItem="3Df-42-pYo" secondAttribute="leading" id="SLe-MW-g5p"/>
                                                 <constraint firstItem="21O-EV-sS1" firstAttribute="leading" secondItem="dya-Ir-8LQ" secondAttribute="trailing" constant="8" id="SbA-uI-hBO"/>
+                                                <constraint firstItem="7E7-w4-482" firstAttribute="centerY" secondItem="rvW-BY-F5V" secondAttribute="centerY" id="X8F-sT-7nw"/>
                                                 <constraint firstItem="h8J-OA-mjr" firstAttribute="top" secondItem="21O-EV-sS1" secondAttribute="bottom" constant="5" id="ZOi-0g-B4A"/>
                                                 <constraint firstAttribute="trailing" secondItem="P1A-Qo-l1r" secondAttribute="trailing" constant="8" id="dNW-8E-v5d"/>
                                                 <constraint firstItem="P1A-Qo-l1r" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="21O-EV-sS1" secondAttribute="trailing" constant="8" id="dRL-pu-zHY"/>
@@ -92,6 +91,7 @@
                                                 <constraint firstItem="21O-EV-sS1" firstAttribute="top" secondItem="INy-Mg-yph" secondAttribute="top" constant="8" id="hKq-SE-d6d"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dya-Ir-8LQ" secondAttribute="bottom" constant="12" id="odo-hG-KTB"/>
                                                 <constraint firstItem="rvW-BY-F5V" firstAttribute="centerY" secondItem="h8J-OA-mjr" secondAttribute="centerY" id="x6g-jA-lDT"/>
+                                                <constraint firstItem="7E7-w4-482" firstAttribute="trailing" secondItem="P1A-Qo-l1r" secondAttribute="trailing" id="zLB-Ll-CVe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
