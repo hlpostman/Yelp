@@ -76,6 +76,23 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         
     }
     
+    func extractKeywords(title: String) -> [String] {
+        var keywords = [String]()
+        keywords = title.lowercased().components(separatedBy: " ")
+        let doNotMatch = ["a":1, "an":1, "and":1, "at":1, "by":1, "for":1, "if":1, "in":1, "it":1, "of":1, "on":1, "or":1, "the":1, "with":1]
+        // First word of title is keyword even if insignificant.
+        for _ in keywords[1..<keywords.count] {
+            for (index, word) in keywords[1..<keywords.count].enumerated() {
+                if (doNotMatch[word] != nil) && (index + 1 < keywords.count) {
+                    keywords.remove(at: index + 1)
+                    print(keywords)
+                    break
+                }
+            }
+        }
+        return keywords
+    }
+    
     // Filter within results
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
@@ -86,12 +103,18 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
 //                return (business as! Business).name?.hasPrefix(searchText)
 //                })
             searchedBusinesses = businesses.filter({ (dataItem: Business) -> Bool in
-                print(dataItem.name!)
-            return dataItem.name!.hasPrefix(searchText)
-        })
-                
-        tableView.reloadData()
+                let titleKeywords = extractKeywords(title: dataItem.name!)
+                for word in titleKeywords {
+                    if word.lowercased().hasPrefix(searchText.lowercased()) {
+//                        print("I have the prefix \(searchText) in my word -> \(word)")
+                        return true
+                    }
+                }
+                return false
+            })
+            
         }
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
