@@ -2,7 +2,7 @@
 
 **Name of your app** is a Yelp search app using the [Yelp API](http://www.yelp.com/developers/documentation/v2/search_api).
 
-Time spent: **5** hours spent in total
+Time spent: **7** hours spent in total
 
 ## User Stories
 
@@ -21,7 +21,8 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] Search bar will filter to show businesses for which the search text is the PREFIX of any WORD in the business title (so, typing “h” won’t give you every result that has “thai” in the title or any other word with an h as the common range filter does, but you also aren’t limited to the “House of Thai” result or other businesses whose name has “h” as the first letter of the very first word - if you don’t trust your spelling of “Tamarind”, you can simply search “Hall” and get the “Tamarind Hall” you wanted).
+
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
