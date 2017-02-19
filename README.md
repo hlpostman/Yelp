@@ -2,7 +2,7 @@
 
 **NearMe** is a Yelp search app using the [Yelp API](http://www.yelp.com/developers/documentation/v2/search_api).
 
-Time spent: *10** hours spent in total
+Time spent: *12** hours spent in total
 
 ## User Stories
 
@@ -30,20 +30,23 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. 
-2. 
+1. One feature I was thinking of implementing was a sort-by-distance option on the table view.  I couldn’t think of a great UI/UX prompt for this though.  My best thought so far has been a user interaction with the distance stat in the business cell, but that would be unexpected.  The table view seems too full to add anything else.  I guess it could be a more permanent choice in a settings controller, to always present results sorted by rating, or distance, or something else.  I would be interested in ideas.
+
+2. I want my detail view to include a map with a route from the current location to the business.  I was thinking of implementing this with an framework/API that would let users set mode of transport.  I’d be curious if anyone has experience doing this.
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/hlpostman/Yelp/blob/master/Video_walkthrough_Yelp.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/hlpostman/Yelp/blob/mapView/Video_Walkthrough_Yelp_inprogress.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+This is a work in progress!  (I was sick 1/2 of the week it was assigned.  But I’ll keep working on it.)
+
+This project built on a starter project that CodePath cofounder Timothy Lee put up and made available to students for this assignment.  That is why some files say they are copyrighted by him.
 
 ## License
 
