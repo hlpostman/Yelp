@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import MapKit
 
 class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+    
+    
+    @IBOutlet weak var mapView: MKMapView!
+    var mapOrListViewButton = UIBarButtonItem()
+    
     
     var businesses: [Business]!
     var searchedBusinesses: [Business]?
@@ -45,6 +51,13 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
             navigationBar.barTintColor = UIColor(red: 0.7, green: 0.03, blue: 0.03, alpha: 1)
 
         }
+        
+        // Map Button setup
+        mapView.isHidden = true
+        mapOrListViewButton = UIBarButtonItem(image: UIImage(named: "Map_View_Icon"), style: .plain, target: self, action: #selector(hideAndShowMapView))
+//        mapOrListViewButton.image = UIImage(named: "Map_View_Icon")
+//        mapOrListViewButton.
+        navigationItem.rightBarButtonItems = [mapOrListViewButton]
         
         // Filter results loaded
         Business.searchWithTerm(term: "Thai", completion: { (businesses: [Business]?, error: Error?) -> Void in
@@ -116,6 +129,19 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         }
         tableView.reloadData()
     }
+    
+    func hideAndShowMapView() {
+        if mapOrListViewButton.image != nil && mapOrListViewButton.image!.isEqual(UIImage(named: "Map_View_Icon")!) {
+            print("It's a map view icon")
+            mapView.isHidden = false
+            mapOrListViewButton.image = UIImage(named: "List_View_Icon")
+        } else {
+            print("It's a list view icon")
+            mapView.isHidden = true
+            mapOrListViewButton.image = UIImage(named: "Map_View_Icon")
+        }
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
