@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import CoreLocation
 import MapKit
 
-class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate {
     
     
     @IBOutlet weak var mapView: MKMapView!
     var mapOrListViewButton = UIBarButtonItem()
-    
+    var locatoinManager: CLLocationManager!
     
     var businesses: [Business]!
     var searchedBusinesses: [Business]?
@@ -55,9 +56,14 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         // Map Button setup
         mapView.isHidden = true
         mapOrListViewButton = UIBarButtonItem(image: UIImage(named: "Map_View_Icon"), style: .plain, target: self, action: #selector(hideAndShowMapView))
-//        mapOrListViewButton.image = UIImage(named: "Map_View_Icon")
-//        mapOrListViewButton.
         navigationItem.rightBarButtonItems = [mapOrListViewButton]
+        
+        // Location setup
+        locatoinManager = CLLocationManager()
+        locatoinManager.delegate = self
+        locatoinManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locatoinManager.distanceFilter = 200
+        locatoinManager.requestWhenInUseAuthorization()
         
         // Filter results loaded
         Business.searchWithTerm(term: "Thai", completion: { (businesses: [Business]?, error: Error?) -> Void in
@@ -112,9 +118,6 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
             searchedBusinesses = self.businesses
             tableView.reloadData()
         } else {
-//            searchedBusinesses = businesses!.filter({ (business) -> bool in
-//                return (business as! Business).name?.hasPrefix(searchText)
-//                })
             searchedBusinesses = businesses.filter({ (dataItem: Business) -> Bool in
                 let titleKeywords = extractKeywords(title: dataItem.name!)
                 for word in titleKeywords {
@@ -142,6 +145,19 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == CLAuthorizationStatus.authorizedWhenInUse {
+            locatoinManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            let span = MKCoordinateSpanMake(0.1, 0.1)
+            let region = MKCoordinateRegionMake(location.coordinate, span)
+            mapView.setRegion(region, animated: false)
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
