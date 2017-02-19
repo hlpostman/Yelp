@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Yelp-->
+        <!--Choices-->
         <scene sceneID="5L9-Uz-lNK">
             <objects>
                 <viewController id="2xI-yr-O5N" customClass="BusinessesViewController" customModule="Yelp" customModuleProvider="target" sceneMemberID="viewController">
@@ -102,27 +102,52 @@
                                             <outlet property="ratingsImageView" destination="h8J-OA-mjr" id="f4s-Sv-xwd"/>
                                             <outlet property="reviewCountLabel" destination="rvW-BY-F5V" id="xZa-xG-ExE"/>
                                             <outlet property="thumbImageView" destination="dya-Ir-8LQ" id="Hzi-A0-b9b"/>
+                                            <segue destination="yi3-C6-1Fw" kind="show" id="nOp-ET-4NW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rwI-4F-Lxe"/>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rwI-4F-Lxe" secondAttribute="trailing" constant="20" id="4jq-b1-uji"/>
+                            <constraint firstItem="rwI-4F-Lxe" firstAttribute="top" secondItem="hR0-74-jRp" secondAttribute="bottom" constant="20" id="6gq-2l-dGc"/>
+                            <constraint firstItem="VBY-gq-v8E" firstAttribute="top" secondItem="5ue-d2-ldQ" secondAttribute="bottom" id="AEr-ja-Iwc"/>
                             <constraint firstItem="5ue-d2-ldQ" firstAttribute="top" secondItem="XhR-oz-92f" secondAttribute="top" id="BOF-2h-RQQ"/>
+                            <constraint firstItem="VBY-gq-v8E" firstAttribute="top" secondItem="rwI-4F-Lxe" secondAttribute="bottom" constant="20" id="OOM-08-9ry"/>
                             <constraint firstAttribute="trailing" secondItem="5ue-d2-ldQ" secondAttribute="trailing" id="aiv-aS-Sdg"/>
-                            <constraint firstItem="VBY-gq-v8E" firstAttribute="top" secondItem="5ue-d2-ldQ" secondAttribute="bottom" id="dhO-13-rJ2"/>
                             <constraint firstItem="5ue-d2-ldQ" firstAttribute="leading" secondItem="XhR-oz-92f" secondAttribute="leading" id="hVp-L2-zsg"/>
+                            <constraint firstItem="rwI-4F-Lxe" firstAttribute="leading" secondItem="XhR-oz-92f" secondAttribute="leading" constant="20" id="mRq-8Q-yDj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Yelp" id="DL9-93-sVg"/>
+                    <navigationItem key="navigationItem" title="Choices" id="DL9-93-sVg"/>
                     <connections>
+                        <outlet property="mapView" destination="rwI-4F-Lxe" id="5Nc-xj-0u8"/>
                         <outlet property="tableView" destination="5ue-d2-ldQ" id="KfH-IA-cFk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fgb-4b-F1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2727.1999999999998" y="357.57121439280365"/>
+        </scene>
+        <!--Business Details View Controller-->
+        <scene sceneID="rnv-a4-osu">
+            <objects>
+                <viewController id="yi3-C6-1Fw" customClass="BusinessDetailsViewController" customModule="Yelp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BX4-Hc-tCM"/>
+                        <viewControllerLayoutGuide type="bottom" id="dk8-4m-bHr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pp4-Az-BpO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Omc-Oo-YC8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3402" y="353"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GT8-cA-yII">
